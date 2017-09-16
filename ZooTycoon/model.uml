@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="__wWI0JbWEeeipftHxC-ICQ" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_KMv2QJbXEeeipftHxC-ICQ" name="Zoo">
+    <ownedAttribute xmi:id="_ziJ9kJbqEeeipftHxC-ICQ" name="Nom : string " visibility="private"/>
+    <ownedAttribute xmi:id="_10X30JbqEeeipftHxC-ICQ" name="Location : string " visibility="private"/>
+    <ownedAttribute xmi:id="_3Xc0IJbqEeeipftHxC-ICQ" name="NumTel : int " visibility="private"/>
+    <ownedAttribute xmi:id="_5QwfIJbqEeeipftHxC-ICQ" name="prixAdulte : int " visibility="private"/>
+    <ownedAttribute xmi:id="_8TsrsJbqEeeipftHxC-ICQ" name="prixEnfant : int" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Q5zkIJbXEeeipftHxC-ICQ" name="Enclos">
+    <ownedAttribute xmi:id="_ymQgkJbrEeeipftHxC-ICQ" name="Nom : string" visibility="private"/>
+    <ownedAttribute xmi:id="_0uBeUJbrEeeipftHxC-ICQ" name="Taille : int" visibility="private"/>
+    <ownedAttribute xmi:id="_2UQcUJbrEeeipftHxC-ICQ" name="Type : string" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SSLsUJbXEeeipftHxC-ICQ" name="Spectacles">
+    <ownedAttribute xmi:id="_4lFaAJbsEeeipftHxC-ICQ" name="Nom : string" visibility="private"/>
+    <ownedAttribute xmi:id="_0KOYQJbsEeeipftHxC-ICQ" name="Date : int" visibility="private"/>
+    <ownedAttribute xmi:id="_2eNNEJbsEeeipftHxC-ICQ" name="Horraire : int" visibility="private"/>
+    <ownedOperation xmi:id="_xkMxMJbsEeeipftHxC-ICQ" name="FaireSpectacle"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_TOY14JbXEeeipftHxC-ICQ" name="Animaux">
+    <ownedAttribute xmi:id="_bX7VkJbnEeeipftHxC-ICQ" name="Nom" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_e12N8JbnEeeipftHxC-ICQ" name="Sexe" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_fkgqwJbnEeeipftHxC-ICQ" name="Age" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_BOhuUJboEeeipftHxC-ICQ" name="Race" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__5f_oJboEeeipftHxC-ICQ" name="Cri : String" visibility="private"/>
+    <ownedOperation xmi:id="_CFShwJbpEeeipftHxC-ICQ" name="Mange"/>
+    <ownedOperation xmi:id="_D9jq8JbpEeeipftHxC-ICQ" name="Cri"/>
+    <ownedOperation xmi:id="_iGLSEJbuEeeipftHxC-ICQ" name="Reproduction">
+      <ownedParameter xmi:id="_kXB6YJbuEeeipftHxC-ICQ" name="Animal : animaux"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UcoKoJbXEeeipftHxC-ICQ" name="Lama">
+    <generalization xmi:id="_oXgvQJbYEeeipftHxC-ICQ" general="_TOY14JbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_xBF2YJbnEeeipftHxC-ICQ" name="Pelages" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_MAdKYJbpEeeipftHxC-ICQ" name="Crache"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_W49qMJbXEeeipftHxC-ICQ" name="Ptérodactyle">
+    <generalization xmi:id="_nTsh0JbYEeeipftHxC-ICQ" general="_TOY14JbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_RMSLgJboEeeipftHxC-ICQ" name="LongueurBec" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Y_1QEJbXEeeipftHxC-ICQ" name="Ornithorynque">
+    <generalization xmi:id="_nidWkJbYEeeipftHxC-ICQ" general="_TOY14JbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_z1rocJboEeeipftHxC-ICQ" name="tailleGriffes : int" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_a13koJbXEeeipftHxC-ICQ" name="Huitre">
+    <generalization xmi:id="_oEu9MJbYEeeipftHxC-ICQ" general="_TOY14JbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_GUVKgJboEeeipftHxC-ICQ" name="APerle" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J7VGYJboEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_K1S0QJboEeeipftHxC-ICQ" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_IYHxwJbpEeeipftHxC-ICQ" name="FaireLeShow"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_c9exYJbXEeeipftHxC-ICQ" name="Baleine">
+    <generalization xmi:id="_n0e6sJbYEeeipftHxC-ICQ" general="_TOY14JbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_8D5nEJboEeeipftHxC-ICQ" name="NbNageoir : int" visibility="private"/>
+    <ownedOperation xmi:id="_OXRQwJbpEeeipftHxC-ICQ" name="Eclabouser"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_eb0XoJbXEeeipftHxC-ICQ" name="Magasins">
+    <ownedAttribute xmi:id="_U7PUEJbpEeeipftHxC-ICQ" name="Nom : string" visibility="private"/>
+    <ownedAttribute xmi:id="_Wz8iIJbpEeeipftHxC-ICQ" name="Localisation : string" visibility="private"/>
+    <ownedOperation xmi:id="_c6__8JbpEeeipftHxC-ICQ" name="VérifierStock"/>
+    <ownedOperation xmi:id="_7a-wcJbpEeeipftHxC-ICQ" name="Vendre">
+      <ownedParameter xmi:id="_7_WBwJbpEeeipftHxC-ICQ" name="vendeur : Vendeur"/>
+      <ownedParameter xmi:id="_9FPS0JbpEeeipftHxC-ICQ" name="produit : Produit"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_f1rtkJbXEeeipftHxC-ICQ" name="Mag_Nourriture">
+    <generalization xmi:id="_pUnQsJbYEeeipftHxC-ICQ" general="_eb0XoJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_MhuZgJbrEeeipftHxC-ICQ" name="Type : string " visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_kdXDUJbXEeeipftHxC-ICQ" name="Mag_Boissons">
+    <generalization xmi:id="_o9XOUJbYEeeipftHxC-ICQ" general="_eb0XoJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_Puf3gJbrEeeipftHxC-ICQ" name="VenteAlcohol : bool" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nXy0IJbXEeeipftHxC-ICQ" name="Mag_Souvenirs">
+    <generalization xmi:id="_orCIMJbYEeeipftHxC-ICQ" general="_eb0XoJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_zDGbUJbwEeeipftHxC-ICQ" name="PourcentageReduction: int " visibility="private"/>
+    <ownedOperation xmi:id="_srgAEJbwEeeipftHxC-ICQ" name="DonnerCadeau">
+      <ownedParameter xmi:id="_uC0_YJbwEeeipftHxC-ICQ" name="age : int"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xGXB0JbwEeeipftHxC-ICQ" name="Reduction"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pHa-sJbXEeeipftHxC-ICQ" name="Personnes">
+    <ownedAttribute xmi:id="_gppmgJbqEeeipftHxC-ICQ" name="Nom : string" visibility="private"/>
+    <ownedAttribute xmi:id="_h9GycJbqEeeipftHxC-ICQ" name="Age : int" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rVlfYJbXEeeipftHxC-ICQ" name="Client">
+    <generalization xmi:id="_lIzXkJbYEeeipftHxC-ICQ" general="_pHa-sJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_oDaCUJbqEeeipftHxC-ICQ" name="NumClient : int" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_smqFsJbXEeeipftHxC-ICQ" name="Employe">
+    <generalization xmi:id="_lcK_gJbYEeeipftHxC-ICQ" general="_pHa-sJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_s-UdIJbqEeeipftHxC-ICQ" name="NumEmploye : int" visibility="private"/>
+    <ownedAttribute xmi:id="_pa35oJbsEeeipftHxC-ICQ" name="Manager : bool " visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zT3kkJbXEeeipftHxC-ICQ" name="Vendeur">
+    <generalization xmi:id="_ktX_0JbYEeeipftHxC-ICQ" general="_smqFsJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_HdDB4JbvEeeipftHxC-ICQ" name="NbrProduitVendu : int " visibility="private"/>
+    <ownedOperation xmi:id="_MbhuEJbvEeeipftHxC-ICQ" name="ToucherComission ">
+      <ownedParameter xmi:id="_VQzssJbvEeeipftHxC-ICQ" name="prixComission : int"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6JHlIJbXEeeipftHxC-ICQ" name="Soigneur">
+    <generalization xmi:id="_jmvH4JbYEeeipftHxC-ICQ" general="_smqFsJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_zhDNgJbuEeeipftHxC-ICQ" name="AnimalFavori : string" visibility="private"/>
+    <ownedOperation xmi:id="_2AqqkJbuEeeipftHxC-ICQ" name="Soigner">
+      <ownedParameter xmi:id="_200rYJbuEeeipftHxC-ICQ" name="animal : Animaux "/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8LXwwJbXEeeipftHxC-ICQ" name="Animateur">
+    <generalization xmi:id="_j91ZQJbYEeeipftHxC-ICQ" general="_smqFsJbXEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_uvQScJbuEeeipftHxC-ICQ" name="AnimalFavori : string" visibility="private"/>
+    <ownedOperation xmi:id="_6bhFQJbuEeeipftHxC-ICQ" name="Animer ">
+      <ownedParameter xmi:id="_7SDrsJbuEeeipftHxC-ICQ" name="enclos : Enclos"/>
+      <ownedParameter xmi:id="_8xSp0JbuEeeipftHxC-ICQ" name="animal : Animaux"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_BzIDcJbYEeeipftHxC-ICQ" name="Produits">
+    <ownedAttribute xmi:id="_XoKX4JbqEeeipftHxC-ICQ" name="Nom : string" visibility="private"/>
+    <ownedAttribute xmi:id="_apmvoJbqEeeipftHxC-ICQ" name="Type : string" visibility="private"/>
+    <ownedAttribute xmi:id="_i22EkJbvEeeipftHxC-ICQ" name="prix : int " visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_E5xrUJbYEeeipftHxC-ICQ" name="Prod_Alimentaire">
+    <generalization xmi:id="_m1SukJbYEeeipftHxC-ICQ" general="_BzIDcJbYEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_DAVwkJbwEeeipftHxC-ICQ" name="estSolide : bool" visibility="private"/>
+    <ownedAttribute xmi:id="_QpML4JbwEeeipftHxC-ICQ" name="estMangeable : bool" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_GLcukJbYEeeipftHxC-ICQ" name="Prod_Souvenir">
+    <generalization xmi:id="_meCsMJbYEeeipftHxC-ICQ" general="_BzIDcJbYEeeipftHxC-ICQ"/>
+    <ownedAttribute xmi:id="_AIcWYJbwEeeipftHxC-ICQ" name="Gamme : string" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_q-3zEJbYEeeipftHxC-ICQ" name="est visité" memberEnd="_q-3zEZbYEeeipftHxC-ICQ _q-3zFJbYEeeipftHxC-ICQ" navigableOwnedEnd="_q-3zEZbYEeeipftHxC-ICQ _q-3zFJbYEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_q-3zEZbYEeeipftHxC-ICQ" name="ZooVisite" type="_KMv2QJbXEeeipftHxC-ICQ" association="_q-3zEJbYEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q-3zEpbYEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q-3zE5bYEeeipftHxC-ICQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_q-3zFJbYEeeipftHxC-ICQ" name="listClients" type="_rVlfYJbXEeeipftHxC-ICQ" association="_q-3zEJbYEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q-3zFZbYEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q-3zFpbYEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__lpCwJbYEeeipftHxC-ICQ" name="emploie" memberEnd="__lpCwZbYEeeipftHxC-ICQ __lpCxJbYEeeipftHxC-ICQ" navigableOwnedEnd="__lpCwZbYEeeipftHxC-ICQ __lpCxJbYEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="__lpCwZbYEeeipftHxC-ICQ" name="ZooTravail" type="_KMv2QJbXEeeipftHxC-ICQ" association="__lpCwJbYEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__lpCwpbYEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__lpCw5bYEeeipftHxC-ICQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="__lpCxJbYEeeipftHxC-ICQ" name="listEmployes" type="_smqFsJbXEeeipftHxC-ICQ" association="__lpCwJbYEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__lpCxZbYEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__lpCxpbYEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Rzvx8JbZEeeipftHxC-ICQ" name="contient" memberEnd="_Rzvx8ZbZEeeipftHxC-ICQ _Rzvx9JbZEeeipftHxC-ICQ" navigableOwnedEnd="_Rzvx8ZbZEeeipftHxC-ICQ _Rzvx9JbZEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_Rzvx8ZbZEeeipftHxC-ICQ" name="ZooMagasin" type="_KMv2QJbXEeeipftHxC-ICQ" association="_Rzvx8JbZEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rzvx8pbZEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rzvx85bZEeeipftHxC-ICQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Rzvx9JbZEeeipftHxC-ICQ" name="listMagasins" type="_eb0XoJbXEeeipftHxC-ICQ" association="_Rzvx8JbZEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rzvx9ZbZEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rzvx9pbZEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_EPoPMJblEeeipftHxC-ICQ" name="s'occupe" memberEnd="_EPoPMZblEeeipftHxC-ICQ _EPoPNJblEeeipftHxC-ICQ" navigableOwnedEnd="_EPoPMZblEeeipftHxC-ICQ _EPoPNJblEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_EPoPMZblEeeipftHxC-ICQ" name="listSoigneurs" type="_6JHlIJbXEeeipftHxC-ICQ" association="_EPoPMJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPoPMpblEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPoPM5blEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_EPoPNJblEeeipftHxC-ICQ" name="listEnclos" type="_Q5zkIJbXEeeipftHxC-ICQ" association="_EPoPMJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPoPNZblEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPoPNpblEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZMTdcJblEeeipftHxC-ICQ" name="habite" memberEnd="_ZMTdcZblEeeipftHxC-ICQ _ZMTddJblEeeipftHxC-ICQ" navigableOwnedEnd="_ZMTdcZblEeeipftHxC-ICQ _ZMTddJblEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_ZMTdcZblEeeipftHxC-ICQ" name="listAnimaux" type="_TOY14JbXEeeipftHxC-ICQ" association="_ZMTdcJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZMTdcpblEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZMTdc5blEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ZMTddJblEeeipftHxC-ICQ" name="enclos" type="_Q5zkIJbXEeeipftHxC-ICQ" association="_ZMTdcJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZMTddZblEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZMTddpblEeeipftHxC-ICQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pGBvMJblEeeipftHxC-ICQ" name="anime" memberEnd="_pGBvMZblEeeipftHxC-ICQ _pGBvNJblEeeipftHxC-ICQ" navigableOwnedEnd="_pGBvMZblEeeipftHxC-ICQ _pGBvNJblEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_pGBvMZblEeeipftHxC-ICQ" name="listSpectacles" type="_SSLsUJbXEeeipftHxC-ICQ" association="_pGBvMJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pGBvMpblEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pGBvM5blEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pGBvNJblEeeipftHxC-ICQ" name="listAnimateur" type="_8LXwwJbXEeeipftHxC-ICQ" association="_pGBvMJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pGBvNZblEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pGBvNpblEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_4xx2YJblEeeipftHxC-ICQ" name="est animé dans" memberEnd="_4xx2YZblEeeipftHxC-ICQ _4xx2ZJblEeeipftHxC-ICQ" navigableOwnedEnd="_4xx2YZblEeeipftHxC-ICQ _4xx2ZJblEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_4xx2YZblEeeipftHxC-ICQ" name="listSpectacles" type="_SSLsUJbXEeeipftHxC-ICQ" association="_4xx2YJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4xx2YpblEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4xx2Y5blEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_4xx2ZJblEeeipftHxC-ICQ" name="enclos" type="_Q5zkIJbXEeeipftHxC-ICQ" association="_4xx2YJblEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4xx2ZZblEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4xx2ZpblEeeipftHxC-ICQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_T5Ok0JbmEeeipftHxC-ICQ" name="vend" memberEnd="_T5Ok0ZbmEeeipftHxC-ICQ _T5Ok1JbmEeeipftHxC-ICQ" navigableOwnedEnd="_T5Ok0ZbmEeeipftHxC-ICQ _T5Ok1JbmEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_T5Ok0ZbmEeeipftHxC-ICQ" name="listSouvenirs" type="_GLcukJbYEeeipftHxC-ICQ" association="_T5Ok0JbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T5Ok0pbmEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T5Ok05bmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_T5Ok1JbmEeeipftHxC-ICQ" name="listMagasins" type="_nXy0IJbXEeeipftHxC-ICQ" association="_T5Ok0JbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T5Ok1ZbmEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T5Ok1pbmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fKh58JbmEeeipftHxC-ICQ" name="vend" memberEnd="_fKh58ZbmEeeipftHxC-ICQ _fKh59JbmEeeipftHxC-ICQ" navigableOwnedEnd="_fKh58ZbmEeeipftHxC-ICQ _fKh59JbmEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_fKh58ZbmEeeipftHxC-ICQ" name="listAlimentsHumain" type="_E5xrUJbYEeeipftHxC-ICQ" association="_fKh58JbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fKh58pbmEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fKh585bmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_fKh59JbmEeeipftHxC-ICQ" name="listMagasins" type="_kdXDUJbXEeeipftHxC-ICQ" association="_fKh58JbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fKh59ZbmEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fKh59pbmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_larCUJbmEeeipftHxC-ICQ" name="vend" memberEnd="_larCUZbmEeeipftHxC-ICQ _larCVJbmEeeipftHxC-ICQ" navigableOwnedEnd="_larCUZbmEeeipftHxC-ICQ _larCVJbmEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_larCUZbmEeeipftHxC-ICQ" name="listAlimentsHumains" type="_f1rtkJbXEeeipftHxC-ICQ" association="_larCUJbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_larCUpbmEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_larCU5bmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_larCVJbmEeeipftHxC-ICQ" name="listMagasins" type="_E5xrUJbYEeeipftHxC-ICQ" association="_larCUJbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_larCVZbmEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_larCVpbmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1dx5kJbmEeeipftHxC-ICQ" name="mange" memberEnd="_1dx5kZbmEeeipftHxC-ICQ _1dx5lJbmEeeipftHxC-ICQ" navigableOwnedEnd="_1dx5kZbmEeeipftHxC-ICQ _1dx5lJbmEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_1dx5kZbmEeeipftHxC-ICQ" name="listAlimentsAnimaux" type="_E5xrUJbYEeeipftHxC-ICQ" association="_1dx5kJbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1dx5kpbmEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1dx5k5bmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_1dx5lJbmEeeipftHxC-ICQ" name="listAnimaux" type="_TOY14JbXEeeipftHxC-ICQ" association="_1dx5kJbmEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1dx5lZbmEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1dx5lpbmEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_FcupkJbnEeeipftHxC-ICQ" name="travaille dans" memberEnd="_FcupkZbnEeeipftHxC-ICQ _FcuplJbnEeeipftHxC-ICQ" navigableOwnedEnd="_FcupkZbnEeeipftHxC-ICQ _FcuplJbnEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_FcupkZbnEeeipftHxC-ICQ" name="listVendeurs" type="_zT3kkJbXEeeipftHxC-ICQ" association="_FcupkJbnEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FcupkpbnEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fcupk5bnEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_FcuplJbnEeeipftHxC-ICQ" name="magasins" type="_eb0XoJbXEeeipftHxC-ICQ" association="_FcupkJbnEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FcuplZbnEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FcuplpbnEeeipftHxC-ICQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_jnFvYJbnEeeipftHxC-ICQ" name="est enfant de" memberEnd="_jnFvYZbnEeeipftHxC-ICQ _jnFvZJbnEeeipftHxC-ICQ" navigableOwnedEnd="_jnFvYZbnEeeipftHxC-ICQ _jnFvZJbnEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_jnFvYZbnEeeipftHxC-ICQ" name="listEnfants" type="_TOY14JbXEeeipftHxC-ICQ" association="_jnFvYJbnEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jnFvYpbnEeeipftHxC-ICQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jnFvY5bnEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_jnFvZJbnEeeipftHxC-ICQ" name="listParents" type="_TOY14JbXEeeipftHxC-ICQ" association="_jnFvYJbnEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jnFvZZbnEeeipftHxC-ICQ" value="2"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jnFvZpbnEeeipftHxC-ICQ" value="2"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_16QWAJbtEeeipftHxC-ICQ" name="Magasin"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_O1tG8JbuEeeipftHxC-ICQ" name="Animaux "/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Yg7PEJbuEeeipftHxC-ICQ" name="Personne"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_eLgzUJbuEeeipftHxC-ICQ" name="Model"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_v65JsJbvEeeipftHxC-ICQ" name="possede " memberEnd="_v65JsZbvEeeipftHxC-ICQ _v65JtJbvEeeipftHxC-ICQ" navigableOwnedEnd="_v65JtJbvEeeipftHxC-ICQ">
+    <ownedEnd xmi:id="_v65JsZbvEeeipftHxC-ICQ" name="zoo" type="_KMv2QJbXEeeipftHxC-ICQ" association="_v65JsJbvEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v65JspbvEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v65Js5bvEeeipftHxC-ICQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_v65JtJbvEeeipftHxC-ICQ" name="listEnclos" type="_Q5zkIJbXEeeipftHxC-ICQ" aggregation="composite" association="_v65JsJbvEeeipftHxC-ICQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v7C6sJbvEeeipftHxC-ICQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v7C6sZbvEeeipftHxC-ICQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
