@@ -9,12 +9,12 @@ namespace ZooTycoon.BLL.Model.Animaux
 {
     public class Enclos : BaseEntity
     {
-        private string Nom { get; set; }
-        private int Taille { get; set; }
-        private string Type { get; set; }
+        public string Nom { get; set; }
+        public int Taille { get; set; }
+        public string Type { get; set; }
 
-        private List<Spectacle> listSpectacles { get; set; }
-        private List<Animal> listAnimaux { get; set; }
+        public List<Spectacle> listSpectacles { get; set; }
+        public List<Animal> listAnimaux { get; set; }
 
         public Enclos (string nom, int taille, string type, List<Animal> listAnimaux, List<Spectacle> listSpectacles) : base()
         {

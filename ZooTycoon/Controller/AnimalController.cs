@@ -7,6 +7,8 @@ using ZooTycoon.BLL.Services;
 using ZooTycoon.BLL.Model.Animaux;
 using ZooTycoon.BLL.Services.Container;
 using System.Threading;
+using ZooTycoon.BLL.Model.Personnes;
+using ZooTycoon.BLL.Model.Magasins;
 
 namespace ZooTycoon.Controller
 {
@@ -45,23 +47,33 @@ namespace ZooTycoon.Controller
         {
             return _uow.SpectacleService().GetAll();
         }
-        public void DescriptionEnclos(Enclos item)
+        public string DescriptionEnclos(Enclos item)
         {
-            Console.WriteLine(_uow.EnclosService().Description(item));
+            return _uow.EnclosService().Description(item);
         }
-        public void DescriptionSpectacle(Spectacle item)
+        public string DescriptionSpectacle(Spectacle item)
         {
-            Console.WriteLine(_uow.SpectacleService().Description(item));
+            return _uow.SpectacleService().Description(item);
         }
         public string DescriptionAnimateur(Spectacle item)
         {
             return _uow.SpectacleService().DescriptionAnimateur(item);
         }
 
+        public List<string> DescriptionAllProduct(Enclos enclos)
+        {
+            return _uow.ProduitAlimService().DescriptionAllProduit(enclos);
+        }
+
         public string StartSpectacle(Spectacle spectacle)
         {
             Thread.Sleep(1000);
-            return _uow.SpectacleService().DoTheSpectacle();
+            return _uow.SpectacleService().DoTheSpectacle(spectacle);
+        }
+
+        public string DonnerManger(Soigneur soigneur, Produit item, Enclos enclos)
+        {
+            return _uow.SoigneurService().DonnerManger(soigneur, item, enclos);
         }
     }
 }

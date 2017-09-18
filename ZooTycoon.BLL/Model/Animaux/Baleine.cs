@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooTycoon.BLL.Model.Magasins;
 
 namespace ZooTycoon.BLL.Model.Animaux
 {
@@ -27,9 +28,6 @@ namespace ZooTycoon.BLL.Model.Animaux
                 return null;
         }
 
-        public override void Mange()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

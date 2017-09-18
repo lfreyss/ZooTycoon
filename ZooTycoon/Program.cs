@@ -29,7 +29,7 @@ namespace ZooTycoon
             _clientController = new ClientController(uow);
 
             _homeController.initialisation();
-            //_clientController.EntreZoo();
+            _clientController.EntreZoo();
 
             menuHome();
 
@@ -88,10 +88,25 @@ namespace ZooTycoon
             Console.Clear();
             Console.WriteLine("#######################################################################################################################");
             Console.WriteLine("Les enclos présents dans le zoo sont les suivants :");
+            var i = 0;
             _animalController.GetAllEnclos().ForEach(x =>
             {
-                _animalController.DescriptionEnclos(x);
+                i++;
+                Console.WriteLine(i + " - " + _animalController.DescriptionEnclos(x));
             });
+            Console.WriteLine("1. Donner à manger aux animaux ");
+            string res = Console.ReadLine();
+            switch (res.ToString())
+            {
+                case "1":
+                    Console.WriteLine("Choisir l'enclos --> Tapez le numéro");
+                    string res2 = Console.ReadLine();
+                    DonnerManger(res2);
+                    break;
+                default:
+                    menuHome();
+                    break;
+            }
             retourHome();
             /*
                         _animalController.GetAllHuitre().ForEach(x =>
@@ -192,7 +207,7 @@ namespace ZooTycoon
             Console.Clear();
             Console.WriteLine("#######################################################################################################################");
             Console.WriteLine("Madame et Messieurs, bienvenue dans notre tout nouveau spectacle");
-            _animalController.DescriptionSpectacle(spectacle);
+            Console.WriteLine(_animalController.DescriptionSpectacle(spectacle));
 
             Console.WriteLine("Que le spectacle commence !!");
             for (int i = 0; i < 5; i++)
@@ -205,6 +220,15 @@ namespace ZooTycoon
             Console.WriteLine("#######################################################################################################################");
             retourHome();
         }
+
+        public static void DonnerManger(string numéro)
+        {
+            Console.WriteLine("#######################################################################################################################");
+            _animalController.DescriptionAllProduct().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("Choisir l'enclos et le produit : exemple --> Tapez 1 1");
+            Console.WriteLine(_animalController.DescriptionSpectacle(spectacle));
+        }
+
         public static void retourHome()
         {
             Console.ReadLine();

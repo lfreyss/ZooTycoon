@@ -14,5 +14,7 @@ namespace ZooTycoon.BLL.Model.Magasins
         {
             this.Gamme = Gamme;
         }
+
+        
     }
 }

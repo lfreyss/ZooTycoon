@@ -28,9 +28,5 @@ namespace ZooTycoon.BLL.Model.Animaux
                 return null;
         }
 
-        public override void Mange()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

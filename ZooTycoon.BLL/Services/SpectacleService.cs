@@ -33,27 +33,28 @@ namespace ZooTycoon.BLL.Services
             item.AddSpectateur();
         }
 
-        public string DoTheSpectacle()
+        public string DoTheSpectacle(Spectacle item)
         {
             Random random = new Random();
             int randomNumber = random.Next(0, 5);
+            int randomAnimal = random.Next(0, item.Enclos.listAnimaux.Count);
             var res = "";
             switch (randomNumber)
             {
                 case 0:
-                    res = "**Eclabouse sur le public**";
+                    res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Eclabouse sur le public**";
                     break;
                 case 1:
-                    res = "**Fait une pirouette**";
+                    res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Fait une pirouette**";
                     break;
                 case 2:
-                    res = "**Joue avec un cerceau**";
+                    res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Joue avec un cerceau**";
                     break;
                 case 3:
-                    res = "**Marche en reculons**";
+                    res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Marche en reculons**";
                     break;
                 case 4:
-                    res = "**Refuse et fait la tête**";
+                    res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Refuse et fait la tête**";
                     break;
                 default:
                     res = "Fin du spectacle";

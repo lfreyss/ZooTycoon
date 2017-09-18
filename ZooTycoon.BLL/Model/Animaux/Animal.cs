@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooTycoon.BLL.Model.Magasins;
 
 namespace ZooTycoon.BLL.Model.Animaux
 {
     public abstract class  Animal : BaseEntity, IAnimal
     {
-        private string Nom { get; set; }
-        private int Age { get; set; }
-        private string Race { get; set; }
+        public string Nom { get; set; }
+        public int Age { get; set; }
+        public string Race { get; set; }
         public bool Sexe {  get; protected set; }
+
+        public List<Prod_Alim> listAlim { get; set; }
 
         protected List<Animal> listParents { get; set; }
         protected List<Animal> listEnfants{ get; set; }
@@ -24,7 +27,9 @@ namespace ZooTycoon.BLL.Model.Animaux
             Sexe = sexe;
         }
 
-        public abstract void Mange();
+        public virtual string Mange(Produit item) {
+            return Nom + " se précipite sur la nouritture. \n";
+        }
 
         public abstract string Cri();
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooTycoon.BLL.Services.Magasin;
 using ZooTycoon.BLL.Services.Personne;
 
 namespace ZooTycoon.BLL.Services.Container
@@ -17,6 +18,8 @@ namespace ZooTycoon.BLL.Services.Container
         private static AnimateurService _animateurService;
         private static ClientService _clientService;
         private static ZooService _zooService;
+        private static SoigneurService _soigneurService;
+        private static ProduitAlimService _produitAlimService;
 
         public UnitOfWork() { }
 
@@ -66,12 +69,30 @@ namespace ZooTycoon.BLL.Services.Container
                 _clientService = new ClientService();
             return _clientService;
         }
+
+        public SoigneurService SoigneurService()
+        {
+            if (_soigneurService == null)
+                _soigneurService = new SoigneurService();
+            return _soigneurService;
+        }
+
         public ZooService ZooService()
         {
             if (_zooService == null)
                 _zooService = new ZooService(this);
             return _zooService;
         }
+        #endregion
+
+        #region Magasin
+        public ProduitAlimService ProduitAlimService()
+        {
+            if (_produitAlimService == null)
+                _produitAlimService = new ProduitAlimService();
+            return _produitAlimService;
+        }
+
         #endregion
     }
 }

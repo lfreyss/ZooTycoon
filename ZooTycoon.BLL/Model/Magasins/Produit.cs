@@ -18,6 +18,9 @@ namespace ZooTycoon.BLL.Model.Magasins
             this.Type = Type;
             this.Prix = Prix;
         }
-
+        public string Description()
+        {
+            return Nom + " de type : " + Type + " au prix de " + Prix + ".";
+        }
     }
 }

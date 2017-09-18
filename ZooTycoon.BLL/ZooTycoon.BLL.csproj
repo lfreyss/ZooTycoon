@@ -52,6 +52,7 @@
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\IAnimal.cs" />
     <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\Magasins\Prod_Alim.cs" />
     <Compile Include="Model\Magasins\Prod_Souvenirs.cs" />
     <Compile Include="Model\Magasins\Produit.cs" />
     <Compile Include="Model\Magasins\Magasin.cs" />
@@ -61,13 +62,16 @@
     <Compile Include="Model\Personnes\Client.cs" />
     <Compile Include="Model\Personnes\Employe.cs" />
     <Compile Include="Model\Personnes\Personnes.cs" />
+    <Compile Include="Model\Personnes\Soigneur.cs" />
     <Compile Include="Model\Zoo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaleineService.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\Magasin\ProduitAlimService.cs" />
     <Compile Include="Services\Personne\ClientService.cs" />
     <Compile Include="Services\Container\UnitOfWork.cs" />
     <Compile Include="Services\Personne\AnimateurService.cs" />
+    <Compile Include="Services\Personne\SoigneurService.cs" />
     <Compile Include="Services\SpectacleService.cs" />
     <Compile Include="Services\EnclosService.cs" />
     <Compile Include="Services\HomeService.cs" />
