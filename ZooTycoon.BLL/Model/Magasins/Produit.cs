@@ -20,7 +20,7 @@ namespace ZooTycoon.BLL.Model.Magasins
         }
         public string Description()
         {
-            return Nom + " de type : " + Type + " au prix de " + Prix + ".";
+            return Id + " - " + Nom + " de type : " + Type + " au prix de " + Prix + ".";
         }
     }
 }

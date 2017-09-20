@@ -9,6 +9,7 @@ using ZooTycoon.BLL.Services.Container;
 using System.Threading;
 using ZooTycoon.BLL.Model.Personnes;
 using ZooTycoon.BLL.Model.Magasins;
+using ZooTycoon.BLL.Model;
 
 namespace ZooTycoon.Controller
 {
@@ -47,6 +48,17 @@ namespace ZooTycoon.Controller
         {
             return _uow.SpectacleService().GetAll();
         }
+
+        public Enclos GetEnclosById(int Id) 
+        {
+            return _uow.EnclosService().GetOneById(Id);
+        }
+
+        public Prod_Alim GetProduitById(int Id)
+        {
+            return _uow.ProduitAlimService().GetOneById(Id);
+        }
+
         public string DescriptionEnclos(Enclos item)
         {
             return _uow.EnclosService().Description(item);
@@ -71,8 +83,13 @@ namespace ZooTycoon.Controller
             return _uow.SpectacleService().DoTheSpectacle(spectacle);
         }
 
-        public string DonnerManger(Soigneur soigneur, Produit item, Enclos enclos)
+        public string DonnerManger(Prod_Alim item, Enclos enclos)
         {
+            var soigneur = _uow.SoigneurService().GetOneAvailable();
+            if (!_uow.StockService().hasProductInStock(item))
+                return "Le " + item.Nom + " n'est plus en stock, veuillez en racheter en magasin.";
+            if (soigneur == null)
+                return "Il n'y a pas de soigneur disponible";
             return _uow.SoigneurService().DonnerManger(soigneur, item, enclos);
         }
     }

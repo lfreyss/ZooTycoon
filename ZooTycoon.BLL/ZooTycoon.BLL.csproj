@@ -58,6 +58,7 @@
     <Compile Include="Model\Magasins\Magasin.cs" />
     <Compile Include="Model\Magasins\Mag_Boissons.cs" />
     <Compile Include="Model\Magasins\Mag_Souvenirs.cs" />
+    <Compile Include="Model\Magasins\Stock.cs" />
     <Compile Include="Model\Personnes\Animateur.cs" />
     <Compile Include="Model\Personnes\Client.cs" />
     <Compile Include="Model\Personnes\Employe.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaleineService.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\Magasin\StockService.cs" />
     <Compile Include="Services\Magasin\ProduitAlimService.cs" />
     <Compile Include="Services\Personne\ClientService.cs" />
     <Compile Include="Services\Container\UnitOfWork.cs" />

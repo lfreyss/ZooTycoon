@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooTycoon.BLL.Model;
 using ZooTycoon.BLL.Services.Magasin;
 using ZooTycoon.BLL.Services.Personne;
 
@@ -20,6 +21,7 @@ namespace ZooTycoon.BLL.Services.Container
         private static ZooService _zooService;
         private static SoigneurService _soigneurService;
         private static ProduitAlimService _produitAlimService;
+        private static StockService _stockService;
 
         public UnitOfWork() { }
 
@@ -92,7 +94,12 @@ namespace ZooTycoon.BLL.Services.Container
                 _produitAlimService = new ProduitAlimService();
             return _produitAlimService;
         }
-
+        public StockService StockService()
+        {
+            if (_stockService == null)
+                _stockService = new StockService();
+            return _stockService;
+        }
         #endregion
     }
 }

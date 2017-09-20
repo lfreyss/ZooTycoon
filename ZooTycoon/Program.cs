@@ -92,8 +92,9 @@ namespace ZooTycoon
             _animalController.GetAllEnclos().ForEach(x =>
             {
                 i++;
-                Console.WriteLine(i + " - " + _animalController.DescriptionEnclos(x));
+                Console.WriteLine(x.Id + " - " + _animalController.DescriptionEnclos(x));
             });
+            Console.WriteLine("");
             Console.WriteLine("1. Donner à manger aux animaux ");
             string res = Console.ReadLine();
             switch (res.ToString())
@@ -224,9 +225,13 @@ namespace ZooTycoon
         public static void DonnerManger(string numéro)
         {
             Console.WriteLine("#######################################################################################################################");
-            _animalController.DescriptionAllProduct().ForEach(x => Console.WriteLine(x));
-            Console.WriteLine("Choisir l'enclos et le produit : exemple --> Tapez 1 1");
-            Console.WriteLine(_animalController.DescriptionSpectacle(spectacle));
+            var enclos = _animalController.GetEnclosById(int.Parse(numéro));
+            _animalController.DescriptionAllProduct(enclos).ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("Choisir le produit : exemple --> Tapez 1 1");
+            var idProduit = Console.ReadLine();
+            var produit = _animalController.GetProduitById(int.Parse(idProduit));
+            
+            Console.WriteLine(_animalController.DonnerManger(produit, enclos));
         }
 
         public static void retourHome()

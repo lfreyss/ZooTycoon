@@ -44,11 +44,18 @@ namespace ZooTycoon.Controller
         {
             List<Animal> listHuitre = new List<Animal>();
             List<Animal> listBaleine = new List<Animal>();
+
+            _uow.StockService().GetStock("StockAnimal", "SudOuest");
+            var algue = _uow.ProduitAlimService().Add("Algue", "Plante", 30, false, true);
+            _uow.StockService().AddProdToStock(algue);
+
             _uow.HuitreService().GetAll().ForEach( x => {
+                x.listAlim.Add(algue);
                 listHuitre.Add((Animal)x);
             });
             _uow.BaleineService().GetAll().ForEach(x =>
             {
+                x.listAlim.Add(_uow.ProduitAlimService().Add("Avoine", "Céréale", 50, false, true));
                 listBaleine.Add((Animal)x);
             });
 
@@ -59,8 +66,12 @@ namespace ZooTycoon.Controller
 
             _uow.AnimateurService().Add("AnimateurBaleine", 25, 0000, false, _uow.BaleineService().GetOneById(5));
             _uow.AnimateurService().Add("AnimateurBaleineManager", 45, 0000, true, _uow.BaleineService().GetOneById(7));
+            _uow.SoigneurService().Add("SoigneurBOB", 34, 0000, true, _uow.BaleineService().GetOneById(7));
+            _uow.SoigneurService().Add("SoigneurDAB", 21, 0000, false, _uow.BaleineService().GetOneById(7));
 
             _uow.SpectacleService().Add("SpectacleHuitre", DateTime.Today, _uow.EnclosService().GetOneById(10), new List<Animateur>() { _uow.AnimateurService().GetOneById(11), _uow.AnimateurService().GetOneById(12) });
+
+            
 
         }
     }

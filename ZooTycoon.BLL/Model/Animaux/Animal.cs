@@ -25,9 +25,10 @@ namespace ZooTycoon.BLL.Model.Animaux
             Age = age;
             Race = race;
             Sexe = sexe;
+            listAlim = new List<Prod_Alim>();
         }
 
-        public virtual string Mange(Produit item) {
+        public virtual string Mange(Prod_Alim item) {
             return Nom + " se précipite sur la nouritture. \n";
         }
 
