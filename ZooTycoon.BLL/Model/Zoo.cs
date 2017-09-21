@@ -16,7 +16,7 @@ namespace ZooTycoon.BLL.Model
         private int NumTel { get; set; }
         private static int PrixAdulte { get; set; }
         private static int PrixEnfant { get; set; }
-        private static int tresorerie { get; set; }
+        public static int tresorerie { get; set; }
         public static List<Enclos> listEnclos { get; private set; }
         public static List<Employe> listEmploye{ get; private set; }
         public static List<Client> listClient{ get; private set; }
@@ -50,6 +50,11 @@ namespace ZooTycoon.BLL.Model
                 tresorerie += PrixEnfant;
             else
                 tresorerie += PrixAdulte;
+        }
+
+        public void RemoveMoney(int money)
+        {
+            tresorerie = tresorerie - money;
         }
     }
 }

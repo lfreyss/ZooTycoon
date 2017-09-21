@@ -22,6 +22,7 @@ namespace ZooTycoon.BLL.Services.Container
         private static SoigneurService _soigneurService;
         private static ProduitAlimService _produitAlimService;
         private static StockService _stockService;
+        private static MagAnimalService _magAnimalService;
 
         public UnitOfWork() { }
 
@@ -99,6 +100,13 @@ namespace ZooTycoon.BLL.Services.Container
             if (_stockService == null)
                 _stockService = new StockService();
             return _stockService;
+        }
+        
+        public MagAnimalService MagAnimalService()
+        {
+            if (_magAnimalService == null)
+                _magAnimalService = new MagAnimalService();
+            return _magAnimalService;
         }
         #endregion
     }

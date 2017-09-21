@@ -45,9 +45,14 @@ namespace ZooTycoon.Controller
             List<Animal> listHuitre = new List<Animal>();
             List<Animal> listBaleine = new List<Animal>();
 
+            var mag = _uow.MagAnimalService().Add("Pedigree", "Nord-Est");
+
             _uow.StockService().GetStock("StockAnimal", "SudOuest");
             var algue = _uow.ProduitAlimService().Add("Algue", "Plante", 30, false, true);
+            var avoine = _uow.ProduitAlimService().Add("Avoine", "Céréale", 50, false, true);
             _uow.StockService().AddProdToStock(algue);
+            mag.AddProduct(algue);
+            mag.AddProduct(avoine);
 
             _uow.HuitreService().GetAll().ForEach( x => {
                 x.listAlim.Add(algue);
@@ -55,23 +60,22 @@ namespace ZooTycoon.Controller
             });
             _uow.BaleineService().GetAll().ForEach(x =>
             {
-                x.listAlim.Add(_uow.ProduitAlimService().Add("Avoine", "Céréale", 50, false, true));
+                x.listAlim.Add(avoine);
                 listBaleine.Add((Animal)x);
             });
 
             _uow.EnclosService().Add("EnclosHuitre", 100, "Habitation", listHuitre, null);
-            _uow.EnclosService().Add("EnclosBaleine", 1000, "Habitation", listBaleine, null);
+            var enclosBaleine = _uow.EnclosService().Add("EnclosBaleine", 1000, "Habitation", listBaleine, null);
 
             _uow.EnclosService().Add("EnclosSpectacleBaleine", 1000, "Spectacle", listBaleine, null);
 
-            _uow.AnimateurService().Add("AnimateurBaleine", 25, 0000, false, _uow.BaleineService().GetOneById(5));
-            _uow.AnimateurService().Add("AnimateurBaleineManager", 45, 0000, true, _uow.BaleineService().GetOneById(7));
+            var anim1 = _uow.AnimateurService().Add("AnimateurBaleine", 25, 0000, false, _uow.BaleineService().GetOneById(5));
+            var anim2 = _uow.AnimateurService().Add("AnimateurBaleineManager", 45, 0000, true, _uow.BaleineService().GetOneById(7));
             _uow.SoigneurService().Add("SoigneurBOB", 34, 0000, true, _uow.BaleineService().GetOneById(7));
             _uow.SoigneurService().Add("SoigneurDAB", 21, 0000, false, _uow.BaleineService().GetOneById(7));
 
-            _uow.SpectacleService().Add("SpectacleHuitre", DateTime.Today, _uow.EnclosService().GetOneById(10), new List<Animateur>() { _uow.AnimateurService().GetOneById(11), _uow.AnimateurService().GetOneById(12) });
+            _uow.SpectacleService().Add("SpectacleHuitre", DateTime.Today, enclosBaleine, new List<Animateur>() { anim1, anim2 });
 
-            
 
         }
     }

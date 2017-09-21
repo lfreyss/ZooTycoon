@@ -46,6 +46,7 @@
     <Compile Include="Controller\AnimalController.cs" />
     <Compile Include="Controller\ClientController.cs" />
     <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\MagasinController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -20,6 +20,7 @@ namespace ZooTycoon
         private static HomeController _homeController { get; set; }
         private static AnimalController _animalController { get; set; }
         private static ClientController _clientController { get; set; }
+        private static MagasinController _magasinController { get; set; }
 
         public static void Main(string[] args)
         {
@@ -27,9 +28,9 @@ namespace ZooTycoon
             _homeController = new HomeController(uow);
             _animalController = new AnimalController(uow);
             _clientController = new ClientController(uow);
+            _magasinController = new MagasinController(uow);
 
             _homeController.initialisation();
-            _clientController.EntreZoo();
 
             menuHome();
 
@@ -52,7 +53,7 @@ namespace ZooTycoon
  */
         }
 
-        public static void menuHome()
+        public static void menuHome(string message = "")
         {
             Console.Clear();
             string res;
@@ -66,6 +67,7 @@ namespace ZooTycoon
             Console.WriteLine("2. Spectacle");
             Console.WriteLine("3. Magasin");
             Console.WriteLine("#######################################################################################################################");
+            Console.WriteLine(message);
             res = Console.ReadLine();
             switch (res.ToString())
             {
@@ -155,7 +157,8 @@ namespace ZooTycoon
             Console.WriteLine("1. Magasin de Souvenir");
             Console.WriteLine("2. Magasin de Nourriture");
             Console.WriteLine("3. Magasin de Boisson");
-            Console.WriteLine("4. Retour Menu");
+            Console.WriteLine("4. Ouvrir le zoo");
+            Console.WriteLine("5. Retour Menu");
             Console.WriteLine("#######################################################################################################################");
             res = Console.ReadLine();
             switch (res.ToString())
@@ -170,6 +173,10 @@ namespace ZooTycoon
                     menuBoisson();
                     break;
                 case "4":
+                    _clientController.EntreZoo();
+                    menuHome("Votre zoo est désormais ouvert, les clients commencent à arriver.");
+                    break;
+                case "5":
                     menuHome();
                     break;
                 default:
@@ -192,6 +199,21 @@ namespace ZooTycoon
             Console.Clear();
             Console.WriteLine("#######################################################################################################################");
             Console.WriteLine("Bienvenue dans le magasin de nourriture :");
+            Console.WriteLine("");
+            Console.WriteLine("1. Acheter nourriture animal ");
+            string res = Console.ReadLine();
+            switch (res.ToString())
+            {
+                case "1":
+                    _magasinController.GetAllMagAnimal().ForEach(x => Console.WriteLine(x.Description()));
+                    Console.WriteLine("Choisir le magasin --> Tapez le numéro");
+                    string res2 = Console.ReadLine();
+                    VendreAlimAnimaux(res2);
+                    break;
+                default:
+                    menuHome();
+                    break;
+            }
             retourHome();
         }
 
@@ -222,16 +244,27 @@ namespace ZooTycoon
             retourHome();
         }
 
-        public static void DonnerManger(string numéro)
+        public static void DonnerManger(string id)
         {
             Console.WriteLine("#######################################################################################################################");
-            var enclos = _animalController.GetEnclosById(int.Parse(numéro));
+            var enclos = _animalController.GetEnclosById(int.Parse(id));
             _animalController.DescriptionAllProduct(enclos).ForEach(x => Console.WriteLine(x));
-            Console.WriteLine("Choisir le produit : exemple --> Tapez 1 1");
+            Console.WriteLine("Choisir le produit : exemple --> Tapez 1");
             var idProduit = Console.ReadLine();
             var produit = _animalController.GetProduitById(int.Parse(idProduit));
             
             Console.WriteLine(_animalController.DonnerManger(produit, enclos));
+        }
+
+        public static void VendreAlimAnimaux(string id)
+        {
+            Console.WriteLine("#######################################################################################################################");
+            Console.WriteLine("Votre trésorerie est de " + _magasinController.getTresorerieZoo());
+            var mag = _magasinController.GetMagasinById(int.Parse(id));
+            _magasinController.GetAllProdMagAnimal(mag).ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("Choisir le produit : exemple --> Tapez 1");
+            var idProduit = Console.ReadLine();
+            Console.WriteLine(_magasinController.VendreProduit(int.Parse(id), int.Parse(idProduit)));
         }
 
         public static void retourHome()

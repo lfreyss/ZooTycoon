@@ -37,5 +37,10 @@ namespace ZooTycoon.BLL.Services
             }
             return res;
         }
+
+        public int GetTresorerie()
+        {
+            return Zoo.tresorerie;
+        }
     }
 }

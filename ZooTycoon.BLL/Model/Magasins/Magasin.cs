@@ -19,5 +19,9 @@ namespace ZooTycoon.BLL.Model.Magasins
 
         public abstract void VerifierStock();
 
+        public virtual string Description()
+        {
+            return Id + " - " + Nom + " est se situe au " + Localisation + " du zoo. ";
+        }
     }
 }

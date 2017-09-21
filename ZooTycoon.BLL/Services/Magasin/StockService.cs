@@ -38,5 +38,10 @@ namespace ZooTycoon.BLL.Services.Magasin
             return "Le " + item.Nom + " a été rajouté au stock.";
         }
 
+        public int HowManyInStock(Prod_Alim item)
+        {
+            return Stock.getStock().listStock.Where(x => x.Nom == item.Nom).Count();
+        }
+
     }
 }
