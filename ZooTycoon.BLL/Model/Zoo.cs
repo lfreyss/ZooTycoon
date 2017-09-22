@@ -56,5 +56,10 @@ namespace ZooTycoon.BLL.Model
         {
             tresorerie = tresorerie - money;
         }
+
+        public void AddMoney(int money)
+        {
+            tresorerie = tresorerie + money;
+        }
     }
 }

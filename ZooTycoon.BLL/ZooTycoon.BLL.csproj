@@ -70,6 +70,8 @@
     <Compile Include="Services\BaleineService.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\Magasin\MagAnimalService.cs" />
+    <Compile Include="Services\Magasin\MagSouvenirService.cs" />
+    <Compile Include="Services\Magasin\ProduitSouvenirService.cs" />
     <Compile Include="Services\Magasin\StockService.cs" />
     <Compile Include="Services\Magasin\ProduitAlimService.cs" />
     <Compile Include="Services\Personne\ClientService.cs" />

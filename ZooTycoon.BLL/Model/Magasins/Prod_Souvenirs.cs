@@ -15,6 +15,9 @@ namespace ZooTycoon.BLL.Model.Magasins
             this.Gamme = Gamme;
         }
 
-        
+        public string Description()
+        {
+            return base.Description() + ". Le souvenir fait parti de la gamme : " + this.Gamme;
+        }
     }
 }

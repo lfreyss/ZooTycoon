@@ -191,6 +191,18 @@ namespace ZooTycoon
             Console.Clear();
             Console.WriteLine("#######################################################################################################################");
             Console.WriteLine("Bienvenue dans le magasin de souvenir :");
+            Console.WriteLine("");
+            Console.WriteLine("1. Ouvrir le magasin ");
+            string res = Console.ReadLine();
+            switch (res.ToString())
+            {
+                case "1":
+                    OuvrirMagasin();
+                    break;
+                default:
+                    menuHome();
+                    break;
+            }
             retourHome();
         }
 
@@ -265,6 +277,14 @@ namespace ZooTycoon
             Console.WriteLine("Choisir le produit : exemple --> Tapez 1");
             var idProduit = Console.ReadLine();
             Console.WriteLine(_magasinController.VendreProduit(int.Parse(id), int.Parse(idProduit)));
+        }
+
+        public static void OuvrirMagasin()
+        {
+            Console.WriteLine("#######################################################################################################################");
+            Console.WriteLine("Votre trésorerie est de " + _magasinController.getTresorerieZoo());
+            var mag = _homeController.GetMagasin();
+            _magasinController.OpenMagasin(mag);
         }
 
         public static void retourHome()

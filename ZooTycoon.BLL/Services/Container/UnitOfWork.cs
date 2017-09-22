@@ -21,8 +21,10 @@ namespace ZooTycoon.BLL.Services.Container
         private static ZooService _zooService;
         private static SoigneurService _soigneurService;
         private static ProduitAlimService _produitAlimService;
+        private static ProduitSouvenirService _produitSouvenirService;
         private static StockService _stockService;
         private static MagAnimalService _magAnimalService;
+        private static MagSouvenirService _magSouvenirService;
 
         public UnitOfWork() { }
 
@@ -107,6 +109,18 @@ namespace ZooTycoon.BLL.Services.Container
             if (_magAnimalService == null)
                 _magAnimalService = new MagAnimalService();
             return _magAnimalService;
+        }
+        public MagSouvenirService MagSouvenirService()
+        {
+            if (_magSouvenirService == null)
+                _magSouvenirService = new MagSouvenirService();
+            return _magSouvenirService;
+        }
+        public ProduitSouvenirService ProduitSouvenirService()
+        {
+            if (_produitSouvenirService == null)
+                _produitSouvenirService = new ProduitSouvenirService();
+            return _produitSouvenirService;
         }
         #endregion
     }
