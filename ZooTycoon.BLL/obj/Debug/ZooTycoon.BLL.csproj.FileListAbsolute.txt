@@ -3,3 +3,8 @@ C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon.BLL\bin\Deb
 C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon.BLL\obj\Debug\ZooTycoon.BLL.csprojResolveAssemblyReference.cache
 C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon.BLL\obj\Debug\ZooTycoon.BLL.dll
 C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon.BLL\obj\Debug\ZooTycoon.BLL.pdb
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon.BLL\bin\Debug\ZooTycoon.BLL.dll
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon.BLL\bin\Debug\ZooTycoon.BLL.pdb
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon.BLL\obj\Debug\ZooTycoon.BLL.csprojResolveAssemblyReference.cache
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon.BLL\obj\Debug\ZooTycoon.BLL.dll
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon.BLL\obj\Debug\ZooTycoon.BLL.pdb

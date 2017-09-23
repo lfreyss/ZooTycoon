@@ -26,7 +26,7 @@ namespace ZooTycoon.BLL.Services.Magasin
 
         public bool hasProductInStock(Prod_Alim item)
         {
-            if(Stock.getStock().listStock.Contains(item))
+            if(Stock.getStock().listStock.Where(x => x.Nom == item.Nom).Any())
                 return true;
             else 
                 return false;

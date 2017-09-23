@@ -38,7 +38,7 @@ namespace ZooTycoon.BLL.Model
         public static Zoo getInstance()
         {
             if (_instance == null) 
-				_instance = new Zoo("ZooTycoon", "NY", 038854782, 25, 10);
+				_instance = new Zoo("ZooTycoon", "New-York", 038854782, 30, 15);
 
             return _instance;
         }

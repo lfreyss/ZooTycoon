@@ -24,33 +24,41 @@ namespace ZooTycoon
 
         public static void Main(string[] args)
         {
-            uow = new UnitOfWork();
-            _homeController = new HomeController(uow);
-            _animalController = new AnimalController(uow);
-            _clientController = new ClientController(uow);
-            _magasinController = new MagasinController(uow);
-
-            _homeController.initialisation();
-
-            menuHome();
-
- /*
-            Console.WriteLine("Les spectacles présents dans le zoo sont les suivants :");
-            _animalController.GetAllSpectacles().ForEach(x =>
+            try
             {
-                _animalController.DescriptionSpectacle(x);
-            });
+                uow = new UnitOfWork();
+                _homeController = new HomeController(uow);
+                _animalController = new AnimalController(uow);
+                _clientController = new ClientController(uow);
+                _magasinController = new MagasinController(uow);
 
-            Task t = Task.Run(() =>
+                _homeController.initialisation();
+                menuHome();
+            }
+            catch (Exception ex)
             {
-                while(_clientController.GetAllClient() == null || _clientController.GetAllClient().Count != 61)
-                {
-                }
-                StartSpectacle(_animalController.GetAllSpectacles().First());
-            });
+                menuHome();
+                Console.WriteLine("Une erreur s'est produite...");
+                Console.WriteLine(ex.Message);
+            }
 
-           Console.ReadLine(); 
- */
+            /*
+                       Console.WriteLine("Les spectacles présents dans le zoo sont les suivants :");
+                       _animalController.GetAllSpectacles().ForEach(x =>
+                       {
+                           _animalController.DescriptionSpectacle(x);
+                       });
+
+                       Task t = Task.Run(() =>
+                       {
+                           while(_clientController.GetAllClient() == null || _clientController.GetAllClient().Count != 61)
+                           {
+                           }
+                           StartSpectacle(_animalController.GetAllSpectacles().First());
+                       });
+
+                      Console.ReadLine(); 
+            */
         }
 
         public static void menuHome(string message = "")
@@ -90,40 +98,35 @@ namespace ZooTycoon
             Console.Clear();
             Console.WriteLine("#######################################################################################################################");
             Console.WriteLine("Les enclos présents dans le zoo sont les suivants :");
-            var i = 0;
             _animalController.GetAllEnclos().ForEach(x =>
             {
-                i++;
                 Console.WriteLine(x.Id + " - " + _animalController.DescriptionEnclos(x));
             });
             Console.WriteLine("");
             Console.WriteLine("1. Donner à manger aux animaux ");
+            Console.WriteLine("2. Construire un enclos ");
+            Console.WriteLine("3. Acheter des animaux ");
             string res = Console.ReadLine();
             switch (res.ToString())
             {
                 case "1":
-                    Console.WriteLine("Choisir l'enclos --> Tapez le numéro");
+                    Console.WriteLine("Choisir l'enclos --> Taper le numéro");
                     string res2 = Console.ReadLine();
                     DonnerManger(res2);
+                    break;
+                case "2":
+                    ConstruireEnclos();
+                    break;
+                case "3":
+                    AcheterAnimal();
                     break;
                 default:
                     menuHome();
                     break;
             }
             retourHome();
-            /*
-                        _animalController.GetAllHuitre().ForEach(x =>
-                        {
-                            Console.WriteLine(x.Cri());
-                        });
-                        _animalController.GetAllBaleine().ForEach(x =>
-                        {
-                            Console.WriteLine(x.Cri());
-                        });
-                        
-            */
-
         }
+
 
         public static void menuSpectacle()
         {
@@ -261,7 +264,7 @@ namespace ZooTycoon
             Console.WriteLine("#######################################################################################################################");
             var enclos = _animalController.GetEnclosById(int.Parse(id));
             _animalController.DescriptionAllProduct(enclos).ForEach(x => Console.WriteLine(x));
-            Console.WriteLine("Choisir le produit : exemple --> Tapez 1");
+            Console.WriteLine("Choisir le produit : Taper l'id");
             var idProduit = Console.ReadLine();
             var produit = _animalController.GetProduitById(int.Parse(idProduit));
             
@@ -285,6 +288,50 @@ namespace ZooTycoon
             Console.WriteLine("Votre trésorerie est de " + _magasinController.getTresorerieZoo());
             var mag = _homeController.GetMagasin();
             _magasinController.OpenMagasin(mag);
+        }
+
+        private static void AcheterAnimal()
+        {
+            Console.WriteLine("#######################################################################################################################");
+            Console.WriteLine("Votre trésorerie est de " + _magasinController.getTresorerieZoo() + " euros.");
+            Console.WriteLine("Vous achetez un animal pour quel enclos ?");
+            _animalController.GetAllEnclos().ForEach(x =>
+            {
+                Console.WriteLine(x.Id + " - " + _animalController.DescriptionEnclos(x));
+            });
+            var enclosId = Console.ReadLine();
+
+            Console.WriteLine("Choix de l'animal (Taper le numéro):");
+            Console.WriteLine("** 1 - Baleine");
+            Console.WriteLine("** 2 - Lama");
+            Console.WriteLine("** 3 - Huitre");
+            Console.WriteLine("** 4 - Pterodactyle");
+            Console.WriteLine("** 5 - Ornithorynque");
+            var animal = Console.ReadLine();
+
+            Console.WriteLine("Nom :");
+            var nom = Console.ReadLine();
+            Console.WriteLine("Age :");
+            var age = Console.ReadLine();
+            Console.WriteLine("Race");
+            var race = Console.ReadLine();
+            Console.WriteLine("Sexe [M|F]");
+            var sexe = Console.ReadLine();
+            Console.WriteLine(_animalController.AcheterAnimal(nom, int.Parse(age), race, sexe, animal, _animalController.GetEnclosById(int.Parse(enclosId))));
+
+        }
+
+        private static void ConstruireEnclos()
+        {
+            Console.WriteLine("#######################################################################################################################");
+            Console.WriteLine("Votre trésorerie est de " + _magasinController.getTresorerieZoo() + " euros. Un enclos coute le prix : Taille * 2 euros.");
+            Console.WriteLine("Nom de l'enclos :");
+            var nom = Console.ReadLine();
+            Console.WriteLine("Taille de l'enclos :");
+            var taille = Console.ReadLine();
+            Console.WriteLine("Type de l'enclos [Habitation||Spectacle] :");
+            var type = Console.ReadLine();
+            Console.WriteLine(_animalController.AcheterEnclos(nom, int.Parse(taille), type));
         }
 
         public static void retourHome()

@@ -27,7 +27,7 @@ namespace ZooTycoon.BLL.Services.Personne
             {
                 res += x.Mange(item);
             });
-            Stock.getStock().listStock.Remove(item);
+            Stock.getStock().RemoveProd(item);
             return res;
         }
 

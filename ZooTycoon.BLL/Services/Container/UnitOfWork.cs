@@ -11,9 +11,11 @@ namespace ZooTycoon.BLL.Services.Container
 {
     public class UnitOfWork
     {
-        private static HomeService _homeService;
         private static HuitreService _huitreService;
         private static BaleineService _baleineService;
+        private static LamaService _lamaService;
+        private static OrnithorynqueService _ornithorynqueService;
+        private static PterodactyleService _pterodactyleService;
         private static EnclosService _enclosService;
         private static SpectacleService _spectacleService;
         private static AnimateurService _animateurService;
@@ -27,13 +29,25 @@ namespace ZooTycoon.BLL.Services.Container
         private static MagSouvenirService _magSouvenirService;
 
         public UnitOfWork() { }
-
+       
         #region animal
-        public HomeService HomeService()
+        public LamaService LamaService()
         {
-            if (_homeService == null)
-                _homeService = new HomeService();
-            return _homeService;
+            if (_lamaService == null)
+                _lamaService = new LamaService();
+            return _lamaService;
+        }
+        public OrnithorynqueService OrnithorynqueService()
+        {
+            if (_ornithorynqueService == null)
+                _ornithorynqueService = new OrnithorynqueService();
+            return _ornithorynqueService;
+        }
+        public PterodactyleService PterodactyleService()
+        {
+            if (_pterodactyleService == null)
+                _pterodactyleService = new PterodactyleService();
+            return _pterodactyleService;
         }
         public HuitreService HuitreService()
         {

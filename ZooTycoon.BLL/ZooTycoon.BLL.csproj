@@ -67,8 +67,11 @@
     <Compile Include="Model\Personnes\Soigneur.cs" />
     <Compile Include="Model\Zoo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BaleineService.cs" />
+    <Compile Include="Services\Animal\BaleineService.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\Animal\OrnithorynqueService.cs" />
+    <Compile Include="Services\Animal\PterodactyleService.cs" />
+    <Compile Include="Services\Animal\LamaService.cs" />
     <Compile Include="Services\Magasin\MagAnimalService.cs" />
     <Compile Include="Services\Magasin\MagSouvenirService.cs" />
     <Compile Include="Services\Magasin\ProduitSouvenirService.cs" />
@@ -78,10 +81,9 @@
     <Compile Include="Services\Container\UnitOfWork.cs" />
     <Compile Include="Services\Personne\AnimateurService.cs" />
     <Compile Include="Services\Personne\SoigneurService.cs" />
-    <Compile Include="Services\SpectacleService.cs" />
-    <Compile Include="Services\EnclosService.cs" />
-    <Compile Include="Services\HomeService.cs" />
-    <Compile Include="Services\HuitreService.cs" />
+    <Compile Include="Services\Animal\SpectacleService.cs" />
+    <Compile Include="Services\Animal\EnclosService.cs" />
+    <Compile Include="Services\Animal\HuitreService.cs" />
     <Compile Include="Services\ZooService.cs" />
   </ItemGroup>
   <ItemGroup />

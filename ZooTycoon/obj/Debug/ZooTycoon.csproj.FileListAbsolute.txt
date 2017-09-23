@@ -6,3 +6,11 @@ C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon\bin\Debug\Z
 C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon\obj\Debug\ZooTycoon.csprojResolveAssemblyReference.cache
 C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon\obj\Debug\ZooTycoon.exe
 C:\Users\laurent.freyss\Documents\CNAM\ZooTycoon\ZooTycoon\ZooTycoon\obj\Debug\ZooTycoon.pdb
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\bin\Debug\ZooTycoon.exe.config
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\obj\Debug\ZooTycoon.exe
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\obj\Debug\ZooTycoon.pdb
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\bin\Debug\ZooTycoon.exe
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\bin\Debug\ZooTycoon.pdb
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\bin\Debug\ZooTycoon.BLL.dll
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\bin\Debug\ZooTycoon.BLL.pdb
+F:\Users\Laurent\Desktop\ZooTycoon\ZooTycoon\obj\Debug\ZooTycoon.csprojResolveAssemblyReference.cache

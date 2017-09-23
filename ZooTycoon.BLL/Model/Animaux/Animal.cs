@@ -14,6 +14,8 @@ namespace ZooTycoon.BLL.Model.Animaux
         public string Race { get; set; }
         public bool Sexe {  get; protected set; }
 
+        public int EspaceNecessaire { get; set; }
+        public int Prix { get; set; }
         public List<Prod_Alim> listAlim { get; set; }
 
         protected List<Animal> listParents { get; set; }

@@ -92,5 +92,40 @@ namespace ZooTycoon.Controller
                 return "Il n'y a pas de soigneur disponible";
             return _uow.SoigneurService().DonnerManger(soigneur, item, enclos);
         }
+
+        public string AcheterEnclos(string nom, int taille, string type)
+        {
+            if (taille * 2 < Zoo.tresorerie)
+                return "Vous venez de construire un nouvelle enclos : " + _uow.EnclosService().Add(nom, taille, type, new List<Animal>(), new List<Spectacle>()).Description();
+            else
+                return "Vous n'avez pas les fonds financiers suffisants pour construire cet enclos...";
+        }
+
+        public string AcheterAnimal(string nom, int age, string race, string sexe, string animal, Enclos enclos) 
+        {
+            Animal item = null;
+            switch (animal) {
+                case "1":
+                     item = (Animal)_uow.BaleineService().Add(nom, age, race, (sexe == "M") ? true : false, 2);
+                    break;
+                case "2":
+                    item = (Animal)_uow.LamaService().Add(nom, age, race, (sexe == "M") ? true : false, "brun");
+                    break;
+                case "3":
+                    item = (Animal)_uow.HuitreService().Add(nom, age, race, (sexe == "M") ? true : false, true);
+                    break;
+                case "4":
+                    item = (Animal)_uow.PterodactyleService().Add(nom, age, race, (sexe == "M") ? true : false, 10);
+                    break;
+                case "5":
+                    item = (Animal)_uow.OrnithorynqueService().Add(nom, age, race, (sexe == "M") ? true : false, 10);
+                    break;
+                default : 
+                        break;
+
+            }
+            return _uow.EnclosService().BuyAnimal(item, enclos);
+
+        }
     }
 }

@@ -69,7 +69,7 @@ namespace ZooTycoon.Controller
                         var res = _uow.MagSouvenirService().OpenMagasin(mag, Zoo.listClient[randomNumber]);
                         if (res != "")
                             Console.WriteLine(res + "\n Votre trésorerie est de : " + getTresorerieZoo());
-                        Thread.Sleep(5000);
+                        Thread.Sleep(2000);
 
                     }
                 });

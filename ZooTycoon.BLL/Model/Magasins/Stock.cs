@@ -29,6 +29,17 @@ namespace ZooTycoon.BLL.Model.Magasins
             return _instance;
         }
 
+        public bool RemoveProd(Prod_Alim item)
+        {
+            var index = this.listStock.First(x => x.Nom == item.Nom);
+            if (index != null)
+            {
+                listStock.Remove(index);
+                return true;
+            }
+            return false;
+        }
+
         public override void VerifierStock()
         {
 

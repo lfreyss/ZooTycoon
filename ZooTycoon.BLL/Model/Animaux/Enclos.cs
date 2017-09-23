@@ -12,7 +12,6 @@ namespace ZooTycoon.BLL.Model.Animaux
         public string Nom { get; set; }
         public int Taille { get; set; }
         public string Type { get; set; }
-
         public List<Spectacle> listSpectacles { get; set; }
         public List<Animal> listAnimaux { get; set; }
 
@@ -25,6 +24,15 @@ namespace ZooTycoon.BLL.Model.Animaux
             this.listAnimaux = listAnimaux;
         }
 
+        public Enclos(string nom, int taille, string type) : base()
+        {
+            Nom = nom;
+            Taille = taille;
+            Type = type;
+            this.listSpectacles = new List<Spectacle>();
+            this.listAnimaux = new List<Animal>();
+        }
+
         public string Description()
         {
             return "Enclos : " + Nom + " de taille : " + Taille.ToString() + " m². C'est un(e) " + Type;
@@ -34,5 +42,11 @@ namespace ZooTycoon.BLL.Model.Animaux
         {
             return Nom;
         }
+
+        public int GetPrix()
+        {
+            return Taille * 2;
+        }
+        
     }
 }

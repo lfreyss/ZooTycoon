@@ -51,17 +51,46 @@ namespace ZooTycoon.Controller
             _uow.StockService().GetStock("StockAnimal", "SudOuest");
             var algue = _uow.ProduitAlimService().Add("Algue", "Plante", 300, false, true);
             var avoine = _uow.ProduitAlimService().Add("Avoine", "Céréale", 500, false, true);
+            var viande = _uow.ProduitAlimService().Add("Viande", "Viande", 900, false, true);
+            var ble = _uow.ProduitAlimService().Add("Blé", "Céréale", 400, false, true); 
+            var herbe = _uow.ProduitAlimService().Add("Herbe", "Plante", 500, false, true);
+            var plancton = _uow.ProduitAlimService().Add("Plancton", "Poisson", 700, false, true);
+            var crustace = _uow.ProduitAlimService().Add("Petite crustacé", "Poisson", 500, false, true); 
             _uow.StockService().AddProdToStock(algue);
             mag.AddProduct(algue);
+            mag.AddProduct(algue);
+            mag.AddProduct(algue);
             mag.AddProduct(avoine);
+            mag.AddProduct(avoine);
+            mag.AddProduct(crustace);
+            mag.AddProduct(crustace);
+            mag.AddProduct(crustace);
+            mag.AddProduct(crustace);
+            mag.AddProduct(crustace);
+            mag.AddProduct(plancton);
+            mag.AddProduct(plancton);
+            mag.AddProduct(plancton);
+            mag.AddProduct(plancton);
+            mag.AddProduct(plancton);
+            mag.AddProduct(plancton);
+            mag.AddProduct(herbe);
+            mag.AddProduct(herbe);
+            mag.AddProduct(herbe);
+            mag.AddProduct(ble);
+            mag.AddProduct(ble);
+            mag.AddProduct(ble);
+            mag.AddProduct(ble);
+            mag.AddProduct(ble);
+            mag.AddProduct(ble);
+            mag.AddProduct(viande);
+            mag.AddProduct(viande);
+            mag.AddProduct(viande);
 
             _uow.HuitreService().GetAll().ForEach( x => {
-                x.listAlim.Add(algue);
                 listHuitre.Add((Animal)x);
             });
             _uow.BaleineService().GetAll().ForEach(x =>
             {
-                x.listAlim.Add(avoine);
                 listBaleine.Add((Animal)x);
             });
 

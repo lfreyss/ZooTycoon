@@ -51,7 +51,7 @@ namespace ZooTycoon.BLL.Services
                     res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Joue avec un cerceau**";
                     break;
                 case 3:
-                    res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Marche en reculons**";
+                    res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " lance un cri " + item.Enclos.listAnimaux[randomAnimal].Cri() + " **";
                     break;
                 case 4:
                     res = "** " + item.Enclos.listAnimaux[randomAnimal].Nom + " Refuse et fait la tête**";
